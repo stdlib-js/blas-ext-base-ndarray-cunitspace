@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { complex64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Fill a one-dimensional single-precision complex floating-point ndarray with linearly spaced numeric elements which increment by `1` starting from a specified value.
+* Fills a one-dimensional single-precision complex floating-point ndarray with linearly spaced numeric elements which increment by `1` starting from a specified value.
 *
-* @module @stdlib/blas-ext-base-ndarray-cunitspace
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a zero-dimensional ndarray containing a starting value.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns input ndarray
 *
 * @example
 * var Complex64Vector = require( '@stdlib/ndarray-vector-complex64' );
 * var Complex64Tensor0D = require( '@stdlib/ndarray-tensor0d-complex64' );
-* var cunitspace = require( '@stdlib/blas-ext-base-ndarray-cunitspace' );
 *
 * var x = new Complex64Vector( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 * var start = new Complex64Tensor0D( 3.0, 0.0 );
@@ -34,12 +45,9 @@
 * var out = cunitspace( [ x, start ] );
 * // returns <ndarray>[ <Complex64>[ 3.0, 0.0 ], <Complex64>[ 4.0, 0.0 ], <Complex64>[ 5.0, 0.0 ], <Complex64>[ 6.0, 0.0 ] ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function cunitspace( arrays: [ complex64ndarray, complex64ndarray ] ): complex64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = cunitspace;
